@@ -1,0 +1,28 @@
+/** Implements a graphical square. */
+class Grapher {
+
+   field int functionType;		// 1: f(x)=x, 2: f(x)=x^2, 3: f(x)=x^0.5, 4: f(x)=1/x
+   field int a;					// Transformation: f(x) -> a*f(x)
+
+   /** Constructs a graph of the function. */
+   constructor Grapher new(int AFunctionType, int AConstant) {
+      let functionType = AFunctionType;
+      let a = AConstant;
+      do setupGraph();
+      return this;
+   }
+
+   /** Disposes this graph. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   /** Draws empty graph. */
+   method void setupGraph() {
+      do Screen.setColor(true);
+      do Screen.drawLine(50, 10, 502, 246);
+      return;
+   }
+
+}

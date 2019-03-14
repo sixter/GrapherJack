@@ -1,0 +1,36 @@
+function Grapher.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 0
+push argument 1
+pop this 1
+push pointer 0
+call Grapher.setupGraph 1
+pop temp 0
+push pointer 0
+return
+function Grapher.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Grapher.setupGraph 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 50
+push constant 10
+push constant 502
+push constant 246
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
